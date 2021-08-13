@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load sekizai_tags %}
+{% load static %}
+{% load cms_tags %}
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/apsti.css' %}">
+{% endblock css %}
+{% block content %}
+
+<!-- //header -->
+
+<!-- //breadcrum -->
+<section class="w3l-about1 py-5" id="about">
+    <div class="container py-lg-3">
+        <div class="header-section text-center mb-lg-5 mb-4">
+            <h2>{% page_attribute "page_title" %}</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 book-info">
+                {% placeholder "content" %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer pt-5">
+
+
+        <div class="below-section mt-5 py-3">
+            <div class="container">
+                <div class="copyright-footer">
+                    <div class="columns text-lg-right text-center">
+                        <p>&copy; l3056762892 | Design by <a href="https://w3layouts.com/">W3Layouts</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
+        <span class="fa fa-arrow-up" aria-hidden="true"></span>
+    </button>
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- /move top -->
+</footer>
+{% endblock %}
+
+{% block extra_js %}
+<!-- script for testimonials -->
+<script>
+    $(document).ready(function () {
+        $('.owl-two').owlCarousel({
+            loop: true,
+            margin: 0,
+            nav: false,
+            responsiveClass: true,
+            autoplay: false,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: false
+                },
+                480: {
+                    items: 1,
+                    nav: false
+                },
+                667: {
+                    items: 1,
+                    nav: false
+                },
+                1000: {
+                    items: 1,
+                    nav: false
+                }
+            }
+        })
+    })
+</script>
+
+<!-- for services carousel slider -->
+<script>
+    $(document).ready(function () {
+        $('.owl-three').owlCarousel({
+            loop: true,
+            stagePadding: 20,
+            margin: 20,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            autoplaySpeed: 1000,
+            autoplayHoverPause: false,
+            nav: false,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 4
+                }
+            }
+        })
+    })
+</script>
+<!-- //for services carousel slider -->
+{% endblock extra_js%}

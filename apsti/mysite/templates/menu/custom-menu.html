@@ -1,0 +1,31 @@
+{% load menu_tags %}
+    {% for child in children %}
+    <!-- no child pages  -->
+    {% if child.is_leaf_node %}
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ child.get_absolute_url }}">{{child.get_menu_title }}<span class="sr-only">(current)</span></a>
+    </li>
+    {% endif %}
+    <!-- /no child pages  -->
+    <!-- has child pages  -->
+    {% if not child.is_leaf_node or child.ancestor %}
+    <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{child.get_menu_title }}
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ child.get_absolute_url }}">{{child.get_menu_title }}</a>
+            <div class="dropdown-divider"></div>
+            {% if child.get_descendants %}
+            {% for kid in child.get_descendants %}
+            <a href="{{ kid.get_absolute_url }}" class="dropdown-item">
+                {{kid.get_menu_title }}
+            </a>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </li>
+    {% endif %}
+    <!-- /has child pages  -->
+    {% endfor %}
+    <!-- /end for child -->

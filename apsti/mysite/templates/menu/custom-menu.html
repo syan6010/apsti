@@ -2,14 +2,14 @@
     {% for child in children %}
     <!-- no child pages  -->
     {% if child.is_leaf_node %}
-    <li class="nav-item active">
+    <li class="nav-item active nv-item">
         <a class="nav-link" href="{{ child.get_absolute_url }}">{{child.get_menu_title }}<span class="sr-only">(current)</span></a>
     </li>
     {% endif %}
     <!-- /no child pages  -->
     <!-- has child pages  -->
     {% if not child.is_leaf_node or child.ancestor %}
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown nv-item">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{child.get_menu_title }}
         </a>

@@ -23,23 +23,27 @@
         <div class="hero-header-11">
             <div class="hero-header-11-content">
                 <div class="container">
-                    <img src="{% static 'images/cropped-result10b.jpg'%}" width="100%" height="auto"/>
-                    <nav class="navbar navbar-expand-lg  navbar-dark bg-primary flex-wrap w-100" style="height: 4rem">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
+                    <div>
+                        <img src="{% static 'images/cropped-result10b.jpg'%}" width="100%" height="auto"/>
+                        <nav class="navbar navbar-expand-lg  navbar-dark bg-primary flex-wrap w-100 p-md-0" style="min-height: 4rem">
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                    aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
 
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav w-100 justify-content-around">
-                                {% show_sub_menu 100 None 100 "menu/custom-menu.html" %}
-                            </ul>
-                        </div>
-                    </nav>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb">
-                            {% show_breadcrumb 0 "menu/custom-breadcrumbs.html" 0 %}
-                        </ol>
-                    </nav>
+                            <div class="collapse navbar-collapse flex-wrap" id="navbarSupportedContent">
+                                <ul class="navbar-nav w-100 justify-content-start flex-wrap">
+                                    {% show_sub_menu 100 None 100 "menu/custom-menu.html" %}
+                                </ul>
+                            </div>
+                        </nav>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                {% show_breadcrumb 0 "menu/custom-breadcrumbs.html" 0 %}
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

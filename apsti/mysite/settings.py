@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+DJANGOCMS_GOOGLEMAP_API_KEY = 'AIzaSyCJ1lmVpTW3Z3PW4Q-sL7CRAmeN82QSlCM'
 
 
 
@@ -185,6 +186,7 @@ LANGUAGES = (
     ## Customize this
     ('zh', gettext('zh')),
 )
+
 
 CMS_LANGUAGES = {
     ## Customize this

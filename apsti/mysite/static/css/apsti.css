@@ -1,3 +1,19 @@
 * {
     list-style: none;
 }
+
+
+@media screen and (min-width: 992px) {
+    .nv-item {
+        width: 11%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nv-item:hover {
+        background: #0b2e13;
+        transition: ease-in .25s;
+    }
+}
